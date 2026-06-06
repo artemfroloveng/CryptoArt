@@ -1,0 +1,15 @@
+@use 'variables';
+
+@font-face {
+  font-family: "Fixel text";
+  src: url('../fonts/FixelText-MediumItalic.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Fixel text";
+  src: url('../fonts/FixelText-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}

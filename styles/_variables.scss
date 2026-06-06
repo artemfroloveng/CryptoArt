@@ -1,0 +1,23 @@
+:root {
+  --color-dark: #101111;
+  --color-while: #FFFFFF;
+  --color-gray: #565656;
+  --color-blue-gray: #638596;
+  --color-sky-blue: #C4EBFF;
+  --color-warm-gold: #EACDA3;
+
+  --border-radius: 50%;
+  --border: 1px solid var(--color-gray);
+
+  --font-family-base: 'Fixel text', sans-serif;
+
+  --container-width: 1512px;
+  --container-padding-x: 20px;
+
+  --section-padding-y: 65px;
+
+  --button-height: 59px;
+  --button-height-small: 47px;
+
+  --transition-duration: 0.2s;
+}

@@ -1,0 +1,48 @@
+@use 'mixins' as *;
+
+body {
+  @include fluid-text(20, 15);
+
+  font-family: var(--font-family-base);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.28;
+  color: var(--color-while);
+  background-color: var(--color-dark);
+}
+
+a,
+button,
+input,
+textarea,
+svg *{
+  transition-duration: var(--transition-duration);
+}
+
+a {
+  text-decoration: none;
+  color: inherit
+}
+
+h1,h2,h3,h4 {
+  font-weight: 500;
+}
+
+h1 {
+  @include fluid-text(53, 32)
+}
+
+h2 {
+  @include fluid-text(28, 20)
+}
+
+h3 {
+  @include fluid-text(20, 15)
+}
+
+h4 {
+  @include fluid-text(17, 14)
+}
+
+
+
