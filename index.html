@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta
     name="viewport"
-    content="width=device-width,user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    content="width=device-width, initial-scale=1.0"
   >
   <meta
     http-equiv="X-UA-Compatible"
@@ -18,27 +18,25 @@
   <title>CryptoArt</title>
 </head>
 <body>
-  <header class="header">
+  <header class="header container">
     <div class="header__inner container">
-      <a
-        class="header__logo"
-        href="/images/Logo.svg"
-      >
+      <a class="header__logo" href="./" aria-label="CryptoArt home">
         <img
           class="header__logo-img"
-          src="/images/Logo.svg"
+          src="./images/Logo.svg"
           alt="CryptoArt"
           width="39"
           height="30"
           loading="lazy"
         />
       </a>
+
       <nav class="header__nav">
         <ul class="header__list">
           <li class="header__item">
             <a
               class="header__link"
-              href="/"
+              href="#about"
             >
               About
             </a>
@@ -46,7 +44,7 @@
           <li class="header__item">
             <a
               class="header__link"
-              href="/"
+              href="#collection"
             >
               Collection
             </a>
@@ -54,19 +52,21 @@
           <li class="header__item">
             <a
               class="header__link"
-              href="/"
+              href="#faqs"
             >
               FAQs
             </a>
           </li>
         </ul>
       </nav>
+
       <button
         class="header__button"
         type="button"
       >
         Connect wallet
       </button>
+
       <div class="header__social">
         <ul class="header__social-list">
           <li class="header__social-item">
@@ -106,7 +106,185 @@
           </li>
         </ul>
       </div>
+
+      <button
+        class="burger__button"
+        type="button"
+        aria-label="Open menu"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+      >
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+      </button>
+
+      <nav
+        class="mobile__menu"
+        id="mobile-menu"
+        aria-label="Mobile navigation"
+        aria-hidden="true"
+      >
+        <ul class="mobile__list">
+          <li class="mobile__item">
+            <a class="mobile__link" href="#about">About</a>
+          </li>
+          <li class="mobile__item">
+            <a class="mobile__link" href="#collection">Collection</a>
+          </li>
+          <li class="mobile__item">
+            <a class="mobile__link" href="#faqs">FAQs</a>
+          </li>
+        </ul>
+
+        <button class="mobile__button" type="button">
+          Connect wallet
+        </button>
+      </nav>
     </div>
   </header>
+
+  <main class="main container">
+    <div class="about" id="about">
+      <h1 class="about__title">The project that inspired the modern <strong>CryptoArt movement</strong></h1>
+      <p class="about__achievement">10,000 unique collectible characters with proof of ownership stored on the Ethereum blockchain.</p>
+      <button
+        type="button"
+        class="about__button"
+      >
+        Mint <strong>now</strong>
+      </button>
+    </div>
+    <section
+      class="nftline"
+      id="collection"
+      aria-labelledby="nftline-title"
+    >
+      <h2
+        class="nftline__title visually-hidden"
+        id="nftline-title"
+      >
+        NFT collection preview
+      </h2>
+
+      <div class="nftline__viewport">
+        <ul class="nftline__list">
+          <li class="nftline__item">
+            <div class="nftline__card nftline__card--violet">
+              <span class="nftline__placeholder" aria-hidden="true">01</span>
+              <img
+                class="nftline__image"
+                src="./Icon/NFT%20svg/image 1.png"
+                alt="NFT character 1"
+                width="180"
+                height="180"
+                loading="lazy"
+              >
+            </div>
+          </li>
+
+          <li class="nftline__item">
+            <div class="nftline__card nftline__card--blue">
+              <span class="nftline__placeholder" aria-hidden="true">02</span>
+              <img
+                class="nftline__image"
+                src="./Icon/NFT%20svg/image 2.png"
+                alt="NFT character 2"
+                width="180"
+                height="180"
+                loading="lazy"
+              >
+            </div>
+          </li>
+
+          <li class="nftline__item">
+            <div class="nftline__card nftline__card--steel">
+              <span class="nftline__placeholder" aria-hidden="true">03</span>
+              <img
+                class="nftline__image"
+                src="./Icon/NFT%20svg/image 3.png"
+                alt="NFT character 3"
+                width="180"
+                height="180"
+                loading="lazy"
+              >
+            </div>
+          </li>
+
+          <li class="nftline__item">
+            <div class="nftline__card nftline__card--clay">
+              <span class="nftline__placeholder" aria-hidden="true">04</span>
+              <img
+                class="nftline__image"
+                src="./Icon/NFT%20svg/image 4.png"
+                alt="NFT character 4"
+                width="180"
+                height="180"
+                loading="lazy"
+              >
+            </div>
+          </li>
+
+          <li class="nftline__item">
+            <div class="nftline__card nftline__card--rose">
+              <span class="nftline__placeholder" aria-hidden="true">05</span>
+              <img
+                class="nftline__image"
+                src="./Icon/NFT%20svg/image 5.png"
+                alt="NFT character 5"
+                width="180"
+                height="180"
+                loading="lazy"
+              >
+            </div>
+          </li>
+
+          <li class="nftline__item">
+            <div class="nftline__card nftline__card--purple">
+              <span class="nftline__placeholder" aria-hidden="true">06</span>
+              <img
+                class="nftline__image"
+                src="./Icon/NFT%20svg/image 6.png"
+                alt="NFT character 6"
+                width="180"
+                height="180"
+                loading="lazy"
+              >
+            </div>
+          </li>
+
+          <li class="nftline__item">
+            <div class="nftline__card nftline__card--lilac">
+              <span class="nftline__placeholder" aria-hidden="true">07</span>
+              <img
+                class="nftline__image"
+                src="./Icon/NFT%20svg/image 7.png"
+                alt="NFT character 7"
+                width="180"
+                height="180"
+                loading="lazy"
+              >
+            </div>
+          </li>
+
+          <li class="nftline__item">
+            <div class="nftline__card nftline__card--cyan">
+              <span class="nftline__placeholder" aria-hidden="true">08</span>
+              <img
+                class="nftline__image"
+                src="./Icon/NFT%20svg/image 8.png"
+                alt="NFT character 8"
+                width="180"
+                height="180"
+                loading="lazy"
+              >
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <script src="./Main.js" defer></script>
 </body>
 </html>

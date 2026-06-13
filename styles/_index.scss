@@ -7,4 +7,8 @@
 @forward 'globals';
 
 // Block
-@forward 'block/header';
+@forward 'block/Header/header';
+@forward 'block/Header/burger__button';
+@forward 'block/Header/mobile__menu';
+@forward 'block/about/about';
+@forward 'block/Nftline/nftline';

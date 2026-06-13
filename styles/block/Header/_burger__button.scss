@@ -1,0 +1,75 @@
+.burger__button {
+  display: none;
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 8px;
+  background: rgba(16, 17, 17, 0.72);
+  box-shadow: 0 0 0 1px rgba(196, 235, 255, 0.38);
+  padding: 0;
+  cursor: pointer;
+  transition:
+    background-color var(--transition-duration),
+    box-shadow var(--transition-duration);
+}
+
+.burger__button:hover {
+  background: rgba(99, 133, 150, 0.28);
+  box-shadow: 0 0 0 1px var(--color-sky-blue);
+}
+
+.burger__line {
+  position: absolute;
+  left: 50%;
+  width: 24px;
+  height: 2px;
+  background: var(--color-white);
+  border-radius: 2px;
+  transform: translateX(-50%);
+  transition:
+    top var(--transition-duration),
+    transform var(--transition-duration),
+    opacity var(--transition-duration);
+}
+
+.burger__line:nth-child(1) {
+  top: 14px;
+}
+
+.burger__line:nth-child(2) {
+  top: 21px;
+}
+
+.burger__line:nth-child(3) {
+  top: 28px;
+}
+
+.burger__button.is-open {
+  background: rgba(16, 17, 17, 0.92);
+  box-shadow: 0 0 0 1px var(--color-white);
+}
+
+.burger__button.is-open .burger__line:nth-child(1) {
+  top: 21px;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.burger__button.is-open .burger__line:nth-child(2) {
+  opacity: 0;
+}
+
+.burger__button.is-open .burger__line:nth-child(3) {
+  top: 21px;
+  transform: translateX(-50%) rotate(-45deg);
+}
+
+@media (max-width: 767px) {
+  .burger__button {
+    position: fixed;
+    top: 27px;
+    right: var(--container-padding-x);
+    z-index: 1003;
+    display: inline-flex;
+  }
+}

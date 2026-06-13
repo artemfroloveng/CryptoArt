@@ -1,0 +1,64 @@
+Что было сделано в проекте CryptoArt
+
+1. Исправлен index.html
+- Упрощен viewport: убраны user-scalable=no, minimum-scale и maximum-scale.
+- Исправлен путь к логотипу: теперь src="./images/Logo.svg".
+- Исправлена ссылка логотипа: теперь ведет на главную текущего проекта через href="./".
+- Исправлено подключение JS: теперь script src="./Main.js" defer.
+- Desktop-навигация переведена на якорные ссылки: #about, #collection, #faqs.
+- Burger button получил aria-controls и aria-expanded.
+- Старые span-классы заменены на BEM-класс burger__line.
+- Mobile menu получил id="mobile-menu", aria-label и aria-hidden.
+- В mobile menu добавлены понятные BEM-классы: mobile__list, mobile__item, mobile__link, mobile__button.
+- Connect wallet в mobile menu сделан кнопкой, а не битой ссылкой с пробелом в URL.
+
+2. Исправлен Main.js
+- Burger button открывает и закрывает mobile menu.
+- При открытии burger превращается в крестик через класс is-open.
+- При повторном клике на крестик меню закрывается.
+- aria-expanded и aria-hidden обновляются при открытии и закрытии.
+- Body получает no-scroll, чтобы страница не скроллилась под открытым меню.
+- Меню закрывается по Escape.
+- Меню закрывается при клике на mobile-ссылку.
+- Меню закрывается при переходе обратно на desktop-ширину от 768px.
+- Удален старый лишний JS-код, который ломал синтаксис.
+
+3. Исправлен header
+- Селектор header заменен на BEM-класс .header.
+- Header получил аккуратные отступы через padding-block-start.
+- Desktop-элементы .header__nav, .header__button и .header__social скрываются на ширине меньше 768px.
+- Логотип получил z-index, чтобы оставаться выше mobile overlay.
+- Исправлены пропущенные точки с запятой и неаккуратные селекторы.
+
+4. Исправлен burger__button
+- Burger скрыт на desktop и показывается только на ширине меньше 768px.
+- Кнопка fixed справа сверху, поэтому остается на том же месте при открытом меню.
+- z-index кнопки выше, чем у mobile menu, поэтому крестик виден и кликабелен.
+- Линии burger сделаны через BEM-класс .burger__line.
+- Добавлена анимация превращения burger в крестик и обратно.
+- Добавлен аккуратный hover и визуальная рамка.
+
+5. Исправлен mobile__menu
+- Mobile menu теперь занимает весь экран через position: fixed и inset: 0.
+- Меню открывается через класс is-open.
+- Добавлены opacity, visibility, pointer-events и transform для мягкого появления.
+- Меню сделано архитектурно понятным через BEM-классы.
+- Добавлены стили для mobile__link и mobile__button.
+
+6. Исправлены глобальные стили и переменные
+- Добавлена нормальная переменная --color-white.
+- Старая переменная --color-while оставлена как алиас, чтобы не ломать существующий код.
+- Убран конфликт fluid-text и font-size у body.
+- Добавлен общий :focus-visible для доступности.
+- Исправлены пропущенные точки с запятой.
+
+7. Исправлены шрифты и Sass
+- Добавлен нормальный font-face для Fixel Text Medium.
+- Italic-файл теперь указан как font-style: italic.
+- Добавлен font-display: swap.
+- Sass-миксин fluid-text переведен на современный math.div.
+- styles/style.css пересобран из SCSS.
+
+8. Проверки
+- node --check Main.js прошел без ошибок.
+- sass styles/style.scss styles/style.css прошел без ошибок и предупреждений.
