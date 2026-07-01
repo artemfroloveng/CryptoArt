@@ -48,3 +48,24 @@ if (burgerButton && menu) {
     }
   });
 }
+
+const sales2Viewport = document.querySelector('.sales2__viewport');
+const sales2PrevButton = document.querySelector('.sales2__control--prev');
+const sales2NextButton = document.querySelector('.sales2__control--next');
+
+if (sales2Viewport && sales2PrevButton && sales2NextButton) {
+  const scrollSales2 = (direction) => {
+    const card = sales2Viewport.querySelector('.sales2__item');
+    const list = sales2Viewport.querySelector('.sales2__list');
+    const gap = list ? parseFloat(window.getComputedStyle(list).columnGap) : 0;
+    const offset = card ? card.getBoundingClientRect().width + gap : sales2Viewport.clientWidth;
+
+    sales2Viewport.scrollBy({
+      left: direction * offset,
+      behavior: 'smooth',
+    });
+  };
+
+  sales2PrevButton.addEventListener('click', () => scrollSales2(-1));
+  sales2NextButton.addEventListener('click', () => scrollSales2(1));
+}

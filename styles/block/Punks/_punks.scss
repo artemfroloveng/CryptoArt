@@ -1,0 +1,203 @@
+.punks {
+  --punks-transition-height: clamp(54px, 5vw, 72px);
+
+  position: relative;
+  z-index: 1;
+  padding-block: clamp(70px, 8vw, 120px) clamp(86px, 10vw, 150px);
+}
+
+.punks::after {
+  content: '';
+  position: absolute;
+  inset-inline: calc(var(--container-padding-x) * -1);
+  bottom: calc(var(--punks-transition-height) * -1);
+  height: var(--punks-transition-height);
+  border-bottom-right-radius: clamp(44px, 5vw, 72px);
+  border-bottom-left-radius: clamp(44px, 5vw, 72px);
+  background-color: var(--color-dark);
+  pointer-events: none;
+}
+
+.punks__top {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(420px, 0.9fr);
+  gap: clamp(36px, 8vw, 112px);
+  align-items: start;
+  margin-block-end: clamp(64px, 7vw, 96px);
+}
+
+.punks__title {
+  max-width: 12em;
+  margin: 0;
+  color: var(--color-white);
+  font-size: clamp(34px, 3.1vw, 48px);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.055em;
+}
+
+.punks__content {
+  max-width: 560px;
+}
+
+.punks__text {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: clamp(15px, 1.2vw, 18px);
+  line-height: 1.48;
+  letter-spacing: -0.015em;
+}
+
+.punks__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-block-start: clamp(30px, 3.5vw, 48px);
+}
+
+.punks__button {
+  display: inline-flex;
+  min-height: var(--button-height-small);
+  align-items: center;
+  justify-content: center;
+  padding-inline: 31px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 9999px;
+  color: var(--color-white);
+  font-size: 16px;
+  line-height: 1;
+}
+
+.punks__button:hover {
+  border-color: var(--color-sky-blue);
+  background-color: rgba(196, 235, 255, 0.1);
+}
+
+.punks__button--primary {
+  border-color: var(--color-white);
+  background-color: var(--color-white);
+  color: var(--color-dark);
+}
+
+.punks__button--primary:hover {
+  border-color: var(--color-sky-blue);
+  background-color: var(--color-sky-blue);
+}
+
+.punks__body {
+  display: grid;
+  grid-template-columns: minmax(360px, 0.82fr) minmax(420px, 1fr);
+  gap: clamp(48px, 6vw, 92px);
+  align-items: stretch;
+}
+
+.punks__legend {
+  display: grid;
+  align-content: start;
+  gap: 18px;
+  margin: 0;
+}
+
+.punks__legend-card {
+  display: flex;
+  min-height: clamp(96px, 9vw, 136px);
+  align-items: center;
+  padding: clamp(24px, 2.5vw, 38px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: clamp(18px, 1.7vw, 28px);
+  color: var(--color-white);
+  background-color: transparent;
+}
+
+.punks__legend-card--blue {
+  border-color: transparent;
+  background-color: var(--color-blue-gray);
+}
+
+.punks__legend-text {
+  max-width: 21em;
+  margin: 0;
+  font-size: clamp(18px, 1.75vw, 26px);
+  line-height: 1.42;
+  letter-spacing: -0.035em;
+}
+
+.punks__media {
+  position: relative;
+  display: grid;
+  min-height: clamp(360px, 42vw, 650px);
+  overflow: hidden;
+  border-radius: clamp(24px, 2.1vw, 34px);
+  background-color: var(--color-blue-gray);
+}
+
+.punks__image {
+  grid-area: 1 / 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  image-rendering: pixelated;
+}
+
+@media (max-width: 1023px) {
+  .punks__top,
+  .punks__body {
+    grid-template-columns: 1fr;
+  }
+
+  .punks__content {
+    max-width: 680px;
+  }
+
+  .punks__body {
+    gap: 28px;
+  }
+
+  .punks__media {
+    order: -1;
+    min-height: clamp(360px, 68vw, 620px);
+  }
+}
+
+@media (max-width: 767px) {
+  .punks {
+    --punks-transition-height: 42px;
+
+    padding-block: 56px 88px;
+  }
+
+  .punks__top {
+    gap: 24px;
+    margin-block-end: 42px;
+  }
+
+  .punks__actions {
+    flex-direction: column;
+    align-items: stretch;
+    margin-block-start: 28px;
+  }
+
+  .punks__button {
+    width: 100%;
+  }
+
+  .punks__legend {
+    gap: 14px;
+  }
+
+  .punks__legend-card {
+    min-height: 104px;
+    padding: 22px;
+    border-radius: 22px;
+  }
+
+  .punks__legend-text {
+    max-width: none;
+    font-size: 18px;
+  }
+
+  .punks__media {
+    min-height: min(110vw, 430px);
+    border-radius: 24px;
+  }
+}

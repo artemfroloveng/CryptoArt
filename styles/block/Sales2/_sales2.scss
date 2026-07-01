@@ -1,0 +1,236 @@
+.sales2 {
+  --sales2-card-width: clamp(280px, 28.5vw, 395px);
+  --sales2-gap: clamp(24px, 2vw, 30px);
+  --sales2-card-radius: clamp(20px, 1.7vw, 24px);
+
+  margin-inline: calc(var(--container-padding-x) * -1);
+  padding: clamp(86px, 8vw, 128px) var(--container-padding-x) clamp(76px, 7vw, 112px);
+  overflow: hidden;
+  color: var(--color-dark);
+  background-color: var(--color-white);
+}
+
+.sales2__inner {
+  max-width: var(--container-width);
+  margin-inline: auto;
+}
+
+.sales2__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-block-end: clamp(70px, 7vw, 98px);
+}
+
+.sales2__title {
+  margin: 0;
+  color: var(--color-dark);
+  font-size: clamp(42px, 3.6vw, 58px);
+  font-weight: 500;
+  line-height: 1.02;
+  letter-spacing: -0.07em;
+}
+
+.sales2__subtitle {
+  margin: 20px 0 0;
+  color: rgba(16, 17, 17, 0.68);
+  font-size: clamp(15px, 1.15vw, 18px);
+  line-height: 1.35;
+  letter-spacing: -0.025em;
+}
+
+.sales2__button {
+  display: inline-flex;
+  min-height: 57px;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  padding-inline: 36px;
+  border: 1px solid rgba(16, 17, 17, 0.18);
+  border-radius: 9999px;
+  color: var(--color-dark);
+  font-size: 16px;
+  line-height: 1;
+}
+
+.sales2__button:hover {
+  border-color: var(--color-dark);
+  background-color: var(--color-dark);
+  color: var(--color-white);
+}
+
+.sales2__viewport {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.sales2__viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.sales2__list {
+  display: grid;
+  grid-auto-columns: var(--sales2-card-width);
+  grid-auto-flow: column;
+  grid-template-columns: none;
+  gap: var(--sales2-gap);
+  width: max-content;
+}
+
+.sales2__item {
+  min-width: 0;
+}
+
+.sales2__card {
+  color: var(--color-dark);
+}
+
+.sales2__media {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: var(--sales2-card-radius);
+  background-color: var(--sales2-card-bg, #9270bb);
+}
+
+.sales2__card--violet {
+  --sales2-card-bg: #9270bb;
+}
+
+.sales2__card--lilac {
+  --sales2-card-bg: #9270bb;
+}
+
+.sales2__card--brick {
+  --sales2-card-bg: #9f564f;
+}
+
+.sales2__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  image-rendering: pixelated;
+}
+
+.sales2__info {
+  padding-block-start: 28px;
+}
+
+.sales2__name {
+  margin: 0 0 8px;
+  color: var(--color-dark);
+  font-size: clamp(22px, 1.75vw, 28px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.055em;
+}
+
+.sales2__text {
+  margin: 0;
+  color: var(--color-dark);
+  font-size: clamp(15px, 1.1vw, 18px);
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+}
+
+.sales2__controls {
+  display: flex;
+  gap: 12px;
+  margin-block-start: clamp(64px, 6vw, 90px);
+}
+
+.sales2__control {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border: 1px solid rgba(16, 17, 17, 0.18);
+  border-radius: 50%;
+  background-color: var(--color-white);
+  color: var(--color-dark);
+}
+
+.sales2__control::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  width: 16px;
+  height: 16px;
+  margin: auto;
+  border-top: 2px solid currentColor;
+  border-left: 2px solid currentColor;
+}
+
+.sales2__control--prev::before {
+  transform: translateX(3px) rotate(-45deg);
+}
+
+.sales2__control--next::before {
+  transform: translateX(-3px) rotate(135deg);
+}
+
+.sales2__control:hover {
+  border-color: var(--color-dark);
+  background-color: var(--color-dark);
+  color: var(--color-white);
+}
+
+@media (max-width: 1023px) {
+  .sales2 {
+    --sales2-card-width: min(58vw, 360px);
+
+    padding-block: 82px 88px;
+  }
+
+  .sales2__viewport {
+    margin-inline: calc(var(--container-padding-x) * -1);
+    padding-inline: var(--container-padding-x);
+  }
+
+  .sales2__list {
+    padding-inline-end: var(--container-padding-x);
+  }
+}
+
+@media (max-width: 767px) {
+  .sales2 {
+    --sales2-card-width: min(78vw, 320px);
+    --sales2-gap: 18px;
+
+    padding-block: 64px 72px;
+  }
+
+  .sales2__head {
+    align-items: flex-start;
+    margin-block-end: 42px;
+  }
+
+  .sales2__title {
+    font-size: clamp(34px, 11vw, 44px);
+    letter-spacing: -0.06em;
+  }
+
+  .sales2__subtitle {
+    margin-block-start: 12px;
+    font-size: 14px;
+  }
+
+  .sales2__button {
+    min-height: 46px;
+    padding-inline: 22px;
+    font-size: 14px;
+  }
+
+  .sales2__info {
+    padding-block-start: 20px;
+  }
+
+  .sales2__control {
+    width: 50px;
+    height: 50px;
+  }
+}

@@ -1,0 +1,226 @@
+.how-to {
+  --how-to-radius: clamp(44px, 5vw, 72px);
+  --how-to-number-size: 48px;
+  --how-to-padding-x: clamp(var(--container-padding-x), 5.4vw, 82px);
+
+  position: relative;
+  margin-inline: calc(var(--container-padding-x) * -1);
+  padding: clamp(112px, 8.4vw, 128px) var(--how-to-padding-x) clamp(88px, 9vw, 136px);
+  color: var(--color-white);
+  background-color: var(--color-white);
+}
+
+.how-to::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-top-left-radius: var(--how-to-radius);
+  border-top-right-radius: var(--how-to-radius);
+  background-color: var(--color-dark);
+  pointer-events: none;
+}
+
+.how-to__inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(280px, 0.95fr) minmax(520px, 1fr);
+  gap: clamp(48px, 8vw, 118px);
+  max-width: var(--container-width);
+  margin-inline: auto;
+}
+
+.how-to__title {
+  max-width: 12em;
+  margin: 0;
+  font-size: clamp(36px, 3vw, 42px);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.055em;
+}
+
+.how-to__list {
+  display: grid;
+  gap: 0;
+  max-width: 650px;
+}
+
+.how-to__item {
+  position: relative;
+  display: grid;
+  grid-template-columns: var(--how-to-number-size) minmax(0, 1fr);
+  column-gap: clamp(42px, 4.2vw, 58px);
+  min-height: 250px;
+}
+
+.how-to__item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: calc(var(--how-to-number-size) + 16px);
+  bottom: 18px;
+  left: calc(var(--how-to-number-size) / 2);
+  width: 1px;
+  background-color: rgba(255, 255, 255, 0.16);
+}
+
+.how-to__number {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  width: var(--how-to-number-size);
+  height: var(--how-to-number-size);
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.86);
+  border-radius: 50%;
+  color: var(--color-white);
+  font-size: 18px;
+  line-height: 1;
+  background-color: var(--color-dark);
+}
+
+.how-to__content {
+  max-width: 500px;
+  padding-block-start: 4px;
+}
+
+.how-to__icon {
+  display: inline-flex;
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  margin-block-end: 24px;
+  border: 1px dashed rgba(255, 255, 255, 0.24);
+  border-radius: 14px;
+}
+
+.how-to__icon img,
+.how-to__icon svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.how-to__step-title {
+  margin: 0 0 16px;
+  color: var(--color-white);
+  font-size: clamp(18px, 1.35vw, 20px);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.how-to__text {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: clamp(16px, 1.2vw, 18px);
+  line-height: 1.42;
+  letter-spacing: -0.03em;
+}
+
+.how-to__text-link {
+  display: inline;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.how-to__text-link:hover {
+  color: var(--color-sky-blue);
+}
+
+.how-to__button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  margin-block-start: 28px;
+  padding-inline: 23px;
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  border-radius: 9999px;
+  color: var(--color-white);
+  font-size: 16px;
+  line-height: 1;
+}
+
+.how-to__button:hover {
+  border-color: var(--color-sky-blue);
+  background-color: rgba(196, 235, 255, 0.1);
+}
+
+@media (max-width: 1023px) {
+  .how-to {
+    padding-block: 88px 104px;
+  }
+
+  .how-to__inner {
+    grid-template-columns: 1fr;
+    gap: 54px;
+  }
+
+  .how-to__title {
+    max-width: none;
+  }
+
+  .how-to__list {
+    max-width: 680px;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .how-to {
+    --how-to-radius: 36px;
+    --how-to-number-size: 44px;
+
+    padding-block: 68px 78px;
+  }
+
+  .how-to__inner {
+    gap: 40px;
+  }
+
+  .how-to__title {
+    font-size: clamp(32px, 10.8vw, 40px);
+  }
+
+  .how-to__item {
+    column-gap: 22px;
+    min-height: 0;
+    padding-block-end: 58px;
+  }
+
+  .how-to__item:last-child {
+    padding-block-end: 0;
+  }
+
+  .how-to__item:not(:last-child)::after {
+    top: calc(var(--how-to-number-size) + 12px);
+    bottom: 18px;
+  }
+
+  .how-to__content {
+    padding-block-start: 0;
+  }
+
+  .how-to__icon {
+    width: 42px;
+    height: 42px;
+    margin-block-end: 18px;
+    border-radius: 12px;
+  }
+
+  .how-to__step-title {
+    margin-block-end: 12px;
+    font-size: 18px;
+  }
+
+  .how-to__text {
+    font-size: 15px;
+    line-height: 1.45;
+  }
+
+  .how-to__button {
+    width: 100%;
+    margin-block-start: 22px;
+  }
+}
