@@ -683,7 +683,182 @@
         </ol>
       </div>
     </section>
+
+    <section
+      class="faq"
+      id="faqs"
+      aria-labelledby="faq-title"
+    >
+      <div class="faq__inner">
+        <h2
+          class="faq__title"
+          id="faq-title"
+        >
+          Details and FAQ
+        </h2>
+
+        <dl class="faq__list">
+          <div class="faq__item">
+            <dt class="faq__question">
+              Where are the images for the punks stored?
+            </dt>
+            <dd class="faq__answer">
+              When originally released, the actual images of the punks were too large to store on the blockchain, so we took a hash of the
+              <a class="faq__link" href="#">composite image</a>
+              of all the punks and embedded it into the contract. You can verify that the punks being managed by the Ethereum contract are the True Official Genuine CryptoPunks by calculating an SHA256 hash on the cryptopunks image and comparing it to the hash stored in the contract.
+            </dd>
+          </div>
+
+          <div class="faq__item">
+            <dt class="faq__question">
+              Are the punks an ERC-721 token?
+            </dt>
+            <dd class="faq__answer">
+              No. The CryptoPunks pre-date the ERC-721 standard and are a custom contract, that means it doesn't comply with any standards. They are
+              <a class="faq__link" href="#">almost an ERC20 token</a>.
+              We support the methods that provide your balance so you can watch CryptoPunks as a token in your wallet and see how many you own.
+            </dd>
+          </div>
+
+          <div class="faq__item">
+            <dt class="faq__question">
+              Where does the market data on this site come from?
+            </dt>
+            <dd class="faq__answer">
+              The prices, bids and sales you see on this site are loaded from the Cryptopunks contract on the Ethereum blockchain. Because the Cryptopunks pre-date the ERC-721 standard, we also needed to write a market so the punks could be transacted.
+            </dd>
+          </div>
+
+          <div class="faq__item">
+            <dt class="faq__question">
+              Do you charge any fees for transactions?
+            </dt>
+            <dd class="faq__answer">
+              No. We charge no fees for Cryptopunks transacted through the built-in market beyond the ones charged by Ethereum (gas). The contract source and more technical details are available
+              <a class="faq__link" href="#">on Github</a>.
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </section>
   </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__top">
+        <a
+          class="footer__brand"
+          href="./"
+          aria-label="CryptoPunks home"
+        >
+          CryptoPunks
+        </a>
+
+        <nav
+          class="footer__nav"
+          aria-label="Footer navigation"
+        >
+          <ul class="footer__nav-list">
+            <li class="footer__nav-item">
+              <a
+                class="footer__nav-link"
+                href="#"
+              >
+                Buy a Punk
+              </a>
+            </li>
+
+            <li class="footer__nav-item">
+              <a
+                class="footer__nav-link"
+                href="#collection"
+              >
+                View Full Collection
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <ul
+          class="footer__social-list"
+          aria-label="Social links"
+        >
+          <li class="footer__social-item">
+            <a
+              class="footer__social-link"
+              href="./icon/Twitter.svg"
+              aria-label="Twitter"
+              
+            >
+              <img
+                src="./icon/Twitter.svg"
+                alt="Twitter"
+              >
+            </a>
+            <a
+              class="footer__social-link"
+              href="./icon/Twitter.svg"
+              aria-label="Twitter"
+
+            >
+              <img
+                src="./icon/Discord.svg"
+                alt="Twitter"
+              >
+            </a>
+          </li>
+
+          <li class="footer__social-item">
+            <a
+              class="footer__social-link"
+              href="#"
+              aria-label="Discord"
+            >
+              <span
+                class="footer__social-placeholder"
+                aria-hidden="true"
+              ></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">
+          &copy; 2021 CryptoPunks. All right reserved.
+        </p>
+
+        <ul class="footer__legal-list">
+          <li class="footer__legal-item">
+            <a
+              class="footer__legal-link"
+              href=""
+            >
+              Privacy Policy
+            </a>
+          </li>
+
+          <li class="footer__legal-item">
+            <a
+              class="footer__legal-link"
+              href="#"
+            >
+              Terms of Service
+            </a>
+          </li>
+
+          <li class="footer__legal-item">
+            <a
+              class="footer__legal-link"
+              href="#"
+            >
+              Cookies Settings
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
 
   <script src="./Main.js" defer></script>
 </body>
