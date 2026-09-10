@@ -291,6 +291,7 @@ input,
 textarea,
 svg * {
   transition-duration: var(--transition-duration);
+  touch-action: manipulation;
 }
 
 a {
